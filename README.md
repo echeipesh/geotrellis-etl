@@ -1,4 +1,4 @@
-A sample for the GeoTrellis ETL Project
+# Sample GeoTrellis ETL Project
 
 You will need to build and assembly jar using 'sbt assembly' and then use 'spark-submit' like so:
 
