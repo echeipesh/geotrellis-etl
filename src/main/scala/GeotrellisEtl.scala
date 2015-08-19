@@ -11,7 +11,7 @@ object GeotrellisEtl extends App {
   val etl = Etl[SpatialKey](args)
 
   implicit val sc = SparkUtils.createSparkContext("GeoTrellis ETL", new SparkConf(true))
-  val (id, rdd) = etl.ingest()
+  val (id, rdd) = etl.load()
   // pass through ingested tiles to the catalog
   etl.save(id, rdd, ZCurveKeyIndexMethod)
   sc.stop()
